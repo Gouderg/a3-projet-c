@@ -1,9 +1,13 @@
 #ifndef FIR_H
 #define FIR_H
-#include "define.h"
 
+#include "stdio.h"
+#include "stdlib.h"
+#include "define.h"
+#include "fichiers.h"
+#include "string.h"
 
 absorp firTest(char* str);
-void FIR();
+absorp FIR(absorp data, absorp* buffer);
 
 #endif

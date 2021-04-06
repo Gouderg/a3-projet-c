@@ -3,14 +3,11 @@
 
 // Inclusion des différentes fonctions
 #include "define.h"
-#include "affichage.h"
+#include "fir.h"
 
-int main(int argc, char const *argv[])
-{
-    oxy myOxy;
-    myOxy.pouls = 96;
-    myOxy.spo2 = 125;
+int main(int argc, char const *argv[]) {  
 
-    affichage(myOxy);
+
+    firTest("record1.dat");
     return EXIT_SUCCESS;
 }
