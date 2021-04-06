@@ -34,3 +34,12 @@ absorp IIR(absorp x, absorp x_1, absorp y_1) {
     x.acir = acir;
     return x;
 }
+
+oxy initOxy(void) {
+    oxy temp;
+    temp.spo2 = 0;
+    temp.pouls = 0;
+
+    return temp;
+
+}

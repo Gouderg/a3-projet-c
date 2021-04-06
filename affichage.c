@@ -5,8 +5,7 @@ void affichage(oxy myOxy) {
         // no thing to do
     } else {
         // On crée le fichier verrouData
-        FILE* verrou = NULL;
-        verrou = fopen(".verrouData", "r");
+        fopen(".verrouData", "r");
 
         // On écrit dans le fichier Data.txt
         FILE* data = NULL;

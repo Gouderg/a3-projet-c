@@ -14,4 +14,10 @@ typedef struct {
     int pouls;      // Pouls
 } oxy;
 
+typedef struct {
+    oxy lastoxy;
+    float acr_min, acir_min, acr_max, acir_max, lastValue; 
+    long compteur_pouls;
+} periode;
+
 #endif

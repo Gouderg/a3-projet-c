@@ -9,6 +9,6 @@
 
 absorp iirTest(char* str);
 absorp IIR(absorp x, absorp x_1, absorp y_1);
-
+oxy initOxy(void);
 
 #endif

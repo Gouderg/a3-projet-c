@@ -3,10 +3,12 @@
 
 // Inclusion des différentes fonctions
 #include "define.h"
-#include "mesure.h"
+#include "integration.h"
 
-int main(int argc, char const *argv[]) {  
 
-    mesureTest("record1_iir.dat");
+int main() {  
+
+    integrationTest("record1.dat");
+
     return EXIT_SUCCESS;
 }

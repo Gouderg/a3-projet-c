@@ -97,3 +97,14 @@ absorp FIR(absorp data, absorp* buffer) {
     data.acir = acir;
     return data;
 }
+
+absorp initAbsorp(void) {
+    absorp temp;
+
+    temp.acir = 0;
+    temp.acr = 0;
+    temp.dcr = 0;
+    temp.dcir = 0;
+
+    return temp;
+}

@@ -9,5 +9,6 @@
 
 absorp firTest(char* str);
 absorp FIR(absorp data, absorp* buffer);
+absorp initAbsorp(void);
 
 #endif
