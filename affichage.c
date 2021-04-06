@@ -2,14 +2,20 @@
 
 void affichage(oxy myOxy) {
     if (access(".verrouData", F_OK) != -1) {
-        // return
+        // no thing to do
     } else {
-        // On crée le fichier
-        FILE* fichier = NULL;
-        fichier = fopen(".verrouData", "r");
-        fclose(fichier);
+        // On crée le fichier verrouData
+        FILE* verrou = NULL;
+        verrou = fopen(".verrouData", "r");
 
-        // On affiche
+        // On écrit dans le fichier Data.txt
+        FILE* data = NULL;
+        data = fopen("Data.txt", "w");
+        
+        if (data != NULL) {
+            fprintf(data, "%d\n%d", myOxy.spo2, myOxy.pouls);
+            fclose(data);
+        }
 
         // On supprime le fichier
         remove(".verrouData");
