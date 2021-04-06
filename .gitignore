@@ -1,0 +1,5 @@
+sujet/*
+*.o
+Interface/*
+projet
+test_auto.zip
