@@ -3,11 +3,10 @@
 
 // Inclusion des différentes fonctions
 #include "define.h"
-#include "fir.h"
+#include "mesure.h"
 
 int main(int argc, char const *argv[]) {  
 
-
-    firTest("record1.dat");
+    mesureTest("record1_iir.dat");
     return EXIT_SUCCESS;
 }
