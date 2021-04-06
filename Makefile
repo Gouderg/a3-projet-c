@@ -1,26 +1,25 @@
-CC = gcc
-CFLAGS = -W -Wall -g
-LDFLAGS = 
- 
+CFLAGS = -W -Wall -g 
+LDFLAGS =
+
 SRC = $(wildcard *.c)
 OBJS = $(SRC:.c=.o)
 HEADER = $(SRC:.c=.h)
-AOUT = projet
  
-all : $(AOUT) 
+all : projet
  
+remake: clean projet
+
 projet : $(OBJS)
-	$(CC) $(LDFLAGS) -o $@ $^
+	gcc $(LDFLAGS) -o $@ $^
 
 %.o : %.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+	gcc $(CFLAGS) -o $@ -c $<
 
-clean :
-	@rm *.o
+clean:
+	rm *.o
 
 cleaner : clean
-	@rm $(AOUT) test_auto.zip
-
+	rm projet test_auto.zip
 
 tozip:
 	zip -r test_auto.zip $(SRC) $(HEADER) define.h -x main.c

@@ -4,10 +4,8 @@
 // Inclusion des différentes fonctions
 
 
-
-
 int main(int argc, char const *argv[])
 {
-    
+    printf("ALED");
     return 0;
 }

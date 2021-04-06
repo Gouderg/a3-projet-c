@@ -1,5 +1,6 @@
 sujet/*
 *.o
-Interface/*
+Images/*
 projet
 test_auto.zip
+interfaceOxymetre.jar
