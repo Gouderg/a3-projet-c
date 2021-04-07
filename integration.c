@@ -10,7 +10,7 @@ void integrationTest(char* filename) {
     FILE* fichier = initFichier(filename);
     int etat = 0;
 
-    if (filename != NULL) {
+    if (fichier != NULL) {
         do {
             data = lireFichier(fichier, &etat); // lecture de la ligne
             if (etat != EOF) {

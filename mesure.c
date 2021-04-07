@@ -26,6 +26,7 @@ oxy mesureTest(char* filename) {
 oxy mesure(absorp data, periode* perio) {
     
     if (data.acr >= 0 && perio->lastValue < 0) {
+        //perio->lastoxy.pouls = 30000/perio->compteur_pouls;
         perio->lastoxy.pouls = (perio->lastoxy.pouls + 30000/perio->compteur_pouls)/2;
         float ratio = (((perio->acr_max - perio->acr_min)/data.dcr) / ((perio->acir_max - perio->acir_min)/data.dcir));
         
@@ -39,7 +40,7 @@ oxy mesure(absorp data, periode* perio) {
             perio->lastoxy.spo2 = -25 * ratio + 110;
         }
         
-        //printf("periode: %d => spo2: %d \n",perio->lastoxy.pouls, perio->lastoxy.spo2);
+        printf("periode: %d => spo2: %d \n",perio->lastoxy.pouls, perio->lastoxy.spo2);
         perio->acir_max = 0;
         perio->acir_min = 0;
         perio->acr_max = 0;

@@ -1,13 +1,13 @@
 #include "fir.h"
 
 // record1.dat
-absorp firTest(char* str) {
+absorp firTest(char* filename) {
     absorp data, lastValue;
     int etat = 0;
     absorp buffer[51] = {0}; // buffer circulaire initialisé à 0
 
     // Ouvre le fichier str et lit ses valeurs
-    FILE* fichier = initFichier(str);
+    FILE* fichier = initFichier(filename);
 
     if (fichier != NULL) {
         do {

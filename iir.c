@@ -1,12 +1,11 @@
 #include "iir.h"
 
-
 // record1_fir.dat
-absorp iirTest(char* str) {
+absorp iirTest(char* filename) {
     absorp x, y, x_1;
     int etat = 0; // Savoir si on est à la fin du programme
     // Ouvre le fichier str et lit ses valeurs
-    FILE* fichier = initFichier(str);
+    FILE* fichier = initFichier(filename);
 
     if (fichier != NULL) {
         do {
@@ -37,9 +36,8 @@ absorp IIR(absorp x, absorp x_1, absorp y_1) {
 
 oxy initOxy(void) {
     oxy temp;
-    temp.spo2 = 0;
-    temp.pouls = 0;
+    temp.spo2 = 85;
+    temp.pouls = 69;
 
     return temp;
-
 }

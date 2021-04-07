@@ -7,7 +7,7 @@
 
 #define ALPHA 0.992
 
-absorp iirTest(char* str);
+absorp iirTest(char* filename);
 absorp IIR(absorp x, absorp x_1, absorp y_1);
 oxy initOxy(void);
 

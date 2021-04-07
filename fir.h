@@ -7,7 +7,7 @@
 #include "fichiers.h"
 #include "string.h"
 
-absorp firTest(char* str);
+absorp firTest(char* filename);
 absorp FIR(absorp data, absorp* buffer);
 absorp initAbsorp(void);
 
