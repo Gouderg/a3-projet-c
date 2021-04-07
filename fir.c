@@ -4,7 +4,7 @@
 absorp firTest(char* filename) {
     absorp data, lastValue;
     int etat = 0;
-    absorp buffer[51] = {0}; // buffer circulaire initialisé à 0
+    ac_struct buffer[51] = {0}; // buffer circulaire initialisé à 0
 
     // Ouvre le fichier str et lit ses valeurs
     FILE* fichier = initFichier(filename);
@@ -24,7 +24,7 @@ absorp firTest(char* filename) {
     return lastValue;
 }
 
-absorp FIR(absorp data, absorp* buffer) {
+absorp FIR(absorp data, ac_struct* buffer) {
     const float FIR_TAPS[51]={
         1.4774946e-019,
         1.6465231e-004,
@@ -85,7 +85,9 @@ absorp FIR(absorp data, absorp* buffer) {
     for (i = 50; i > 0; i--) {
         buffer[i] = buffer[i-1];
     }
-    buffer[0] = data;
+    buffer[0].acr = data.acr;
+    buffer[0].acir = data.acir;
+
 
     // // On effectue le filtrage
     for (i = 0; i < 51; i++) {

@@ -10,6 +10,10 @@ typedef struct {
 } absorp;
 
 typedef struct {
+    float acr, acir;
+} ac_struct;
+
+typedef struct {
     int spo2;       // SP02
     int pouls;      // Pouls
 } oxy;

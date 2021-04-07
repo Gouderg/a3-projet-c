@@ -6,7 +6,7 @@ void integrationTest(char* filename) {
     absorp x_1 = initAbsorp();
     oxy oxy = initOxy();
     periode myPeriode = initPeriode();
-    absorp buffer[51] = {0}; // buffer circulaire initialisé à 0
+    ac_struct buffer[51] = {0}; // buffer circulaire initialisé à 0
     FILE* fichier = initFichier(filename);
     int etat = 0;
 

@@ -1,4 +1,7 @@
-CFLAGS = -W -Wall -g 
+CC = gcc
+#CC = x86_64-w64-mingw32-gcc
+CFLAGS = -W -Wall -g
+#LDFLAGS = -L./ -lftd2xx
 LDFLAGS =
 
 SRC = $(wildcard *.c)
@@ -10,10 +13,10 @@ all : projet
 remake: clean projet
 
 projet : $(OBJS)
-	gcc $(LDFLAGS) -o $@ $^
+	$(CC) $(LDFLAGS) -o $@ $^
 
 %.o : %.c
-	gcc $(CFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	rm *.o

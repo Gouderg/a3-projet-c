@@ -8,7 +8,7 @@
 #include "string.h"
 
 absorp firTest(char* filename);
-absorp FIR(absorp data, absorp* buffer);
+absorp FIR(absorp data, ac_struct* buffer);
 absorp initAbsorp(void);
 
 #endif
