@@ -14,7 +14,6 @@ oxy mesureTest(char* filename) {
             data = lireFichier(fichier, &etat);
             if (etat != EOF) {
                 myOxy = mesure(data, &myPeriode);
-
             }
         } while (etat != EOF);
     }

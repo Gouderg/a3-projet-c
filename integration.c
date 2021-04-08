@@ -14,15 +14,12 @@ void integrationTest(char* filename) {
         do {
             data = lireFichier(fichier, &etat); // lecture de la ligne
             if (etat != EOF) {
-                data = FIR(data, buffer); // Application du filtre FIR
-                y = IIR(data, x_1, y);    // Application du filtre IIR
-                x_1 = data;
+                data = FIR(data, buffer);       // Application du filtre FIR
+                y = IIR(data, &x_1, y);         // Application du filtre IIR
                 oxy = mesure(y, &myPeriode);    // On effectue la mesure
                 affichage(oxy);
             }
-            
         } while (etat != EOF);
     }
     finFichier(fichier);
-
 }

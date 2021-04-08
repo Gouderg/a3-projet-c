@@ -1,9 +1,6 @@
 #ifndef MESURE_H
 #define MESURE_H
 
-#include "stdlib.h"
-#include "stdio.h"
-
 #include "define.h"
 #include "fichiers.h"
 

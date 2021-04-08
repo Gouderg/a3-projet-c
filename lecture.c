@@ -38,7 +38,6 @@ absorp lecture(FILE* pf, int* etat) {
 // Liaison USB
 absorp lectureUSB() {
     absorp data = initAbsorp();
-
     // FT_HANDLE ftHandle;
     // FT_STATUS ftStatus;
     // DWORD RxBytes = 21;

@@ -2,6 +2,9 @@
 #ifndef DEFINE_H
 #define DEFINE_H
 
+#include "stdio.h"
+#include "stdlib.h"
+
 typedef struct {
     float acr;      // AC R
     float dcr;      // DC R
