@@ -6,9 +6,11 @@
 #include "integration.h"
 #include "lecture.h"
 #include "affichage.h"
+#include "ftd2xx.h"
 
 
 int main() {  
+
     // Initialisation des variables
     absorp data = initAbsorp();
     absorp y = initAbsorp();

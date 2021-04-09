@@ -20,4 +20,4 @@ clean:
 	rm *.o
 
 tozip:
-	zip -r test_usb.zip $(SRC) $(HEADER) define.h -x main.c
+	zip -r auto_save2.zip $(SRC) $(HEADER) define.h -x main.c

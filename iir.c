@@ -1,28 +1,47 @@
+/* ---------------------------------------------- */
+/* - Auteur: ILLIEN Victor                      - */
+/* - Fichier: iir.c                             - */
+/* - Utilisation: fonctions liées au filtre iir - */
+/* - Version: 1.0                               - */
+/* ---------------------------------------------- */
 #include "iir.h"
 
-// record1_fir.dat
+/* ------------------------------------------------- */
+/* - Nom: iirTest                                  - */
+/* - Description: Lis chaque trame dans un fichier - */
+/* -                  et applique la fonction IIR  - */
+/* - Paramètre: char*                              - */
+/* - Return: absorp                                - */
+/* ------------------------------------------------- */
 absorp iirTest(char* filename) {
     absorp x = initAbsorp();
     absorp y = initAbsorp();
     absorp x_1 = initAbsorp();
-
-    int etat = 0; // Savoir si on est à la fin du programme
-    // Ouvre le fichier str et lit ses valeurs
+    int etat = 0;
+    // Ouvre le fichier filename et renvoie un pointeur sur le premier caractère
     FILE* fichier = initFichier(filename);
 
     if (fichier != NULL) {
         do {
-            x = lireFichier(fichier, &etat);
+            x = lireFichier(fichier, &etat);    // Lis une trame et la renvoie sous forme absorp 
             if (etat != EOF) {
-                y = IIR(x, &x_1, y);
+                y = IIR(x, &x_1, y);            // Applique le filtre IIR
             }
         } while (etat != EOF);
     }
+    
+    // Ferme le fichier
     finFichier(fichier);
-    // Renvoie la dernière valeur filtré
+
     return y;
 }
 
+/* ------------------------------------------------- */
+/* - Nom: FIR                                      - */
+/* - Description: Applique un filtre passe-haut    - */
+/* - Paramètre: absorp, absorp*, absorp            - */
+/* - Return: absorp                                - */
+/* ------------------------------------------------- */
 absorp IIR(absorp x, absorp* x_1, absorp y_1) {
 
     float acr = 0, acir = 0;
@@ -36,6 +55,12 @@ absorp IIR(absorp x, absorp* x_1, absorp y_1) {
     return x;
 }
 
+/* ------------------------------------------------- */
+/* - Nom: initOxy                                  - */
+/* - Description: Initialise une structure oxy     - */
+/* - Paramètre: void                               - */
+/* - Return: oxy                                   - */
+/* ------------------------------------------------- */
 oxy initOxy(void) {
     oxy temp;
     temp.spo2 = 85;

@@ -1,3 +1,9 @@
+/* ---------------------------------------------- */
+/* - Auteur: ILLIEN Victor                      - */
+/* - Fichier: iir.h                             - */
+/* - Utilisation: fichier d'entête de iir       - */
+/* - Version: 1.0                               - */
+/* ---------------------------------------------- */
 #ifndef IIR_H
 #define IIR_H
 #include "define.h"

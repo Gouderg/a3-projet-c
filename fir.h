@@ -1,3 +1,9 @@
+/* ---------------------------------------------- */
+/* - Auteur: ILLIEN Victor                      - */
+/* - Fichier: fir.h                             - */
+/* - Utilisation: fichier d'entête de fir       - */
+/* - Version: 1.0                               - */
+/* ---------------------------------------------- */
 #ifndef FIR_H
 #define FIR_H
 

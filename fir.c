@@ -1,29 +1,49 @@
+/* ---------------------------------------------- */
+/* - Auteur: ILLIEN Victor                      - */
+/* - Fichier: fir.c                             - */
+/* - Utilisation: fonctions liées au filtre fir - */
+/* - Version: 1.0                               - */
+/* ---------------------------------------------- */
 #include "fir.h"
 
-// record1.dat
+/* ------------------------------------------------- */
+/* - Nom: firTest                                  - */
+/* - Description: Lis chaque trame dans un fichier - */
+/* -                  et applique la fonction FIR  - */
+/* - Paramètre: char*                              - */
+/* - Return: absorp                                - */
+/* ------------------------------------------------- */
 absorp firTest(char* filename) {
     absorp data, lastValue;
     int etat = 0;
     ac_struct buffer[51] = {0}; // buffer circulaire initialisé à 0
 
-    // Ouvre le fichier str et lit ses valeurs
+    // Ouvre le fichier filename et renvoie un pointeur sur le premier caractère
     FILE* fichier = initFichier(filename);
 
     if (fichier != NULL) {
         do {
-            data = lireFichier(fichier, &etat);
+            data = lireFichier(fichier, &etat); // Lis une trame et la renvoie
             if (etat != EOF) {
-                lastValue = FIR(data, buffer);
+                lastValue = FIR(data, buffer); // Applique le filtre FIR
             }
         } while (etat != EOF);
     }
-    
+
+    // Ferme le fichier
     finFichier(fichier);
 
     // Retourne la dernière valeur d'absorption filtré
     return lastValue;
 }
 
+/* ------------------------------------------------- */
+/* - Nom: FIR                                      - */
+/* - Description: Applique un filtre passe-bas     - */
+/* -              avec un buffer circulaire        - */
+/* - Paramètre: absorp, ac_struct*                 - */
+/* - Return: absorp                                - */
+/* ------------------------------------------------- */
 absorp FIR(absorp data, ac_struct* buffer) {
     const float FIR_TAPS[51]={
         1.4774946e-019,
@@ -81,25 +101,33 @@ absorp FIR(absorp data, ac_struct* buffer) {
     
     int i;
     float acr = 0, acir = 0;
-    // J'ajoute la nouvelle valeur de data dans mon buffer
+
+    // Je dégage la 50ième valeur pour libéré la place en 0
     for (i = 50; i > 0; i--) {
         buffer[i] = buffer[i-1];
     }
+    // J'affecte la nouvelle valeur
     buffer[0].acr = data.acr;
     buffer[0].acir = data.acir;
 
 
-    // // On effectue le filtrage
+    // On effectue le filtrage
     for (i = 0; i < 51; i++) {
         acir += FIR_TAPS[i] * buffer[i].acir;
         acr += FIR_TAPS[i] * buffer[i].acr;
     }
-
+    
     data.acr = acr;
     data.acir = acir;
     return data;
 }
 
+/* ------------------------------------------------- */
+/* - Nom: initAbsorp                               - */
+/* - Description: Initialise une strucutre absorp  - */
+/* - Paramètre: void                               - */
+/* - Return: absorp                                - */
+/* ------------------------------------------------- */
 absorp initAbsorp(void) {
     absorp temp;
 

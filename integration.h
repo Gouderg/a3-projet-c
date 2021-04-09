@@ -1,3 +1,9 @@
+/* ----------------------------------------------- */
+/* - Auteur: ILLIEN Victor                       - */
+/* - Fichier: integration.h                      - */
+/* - Utilisation: fichier d'entête d'integration - */
+/* - Version: 1.0                                - */
+/* ----------------------------------------------- */
 #ifndef INTEGRATION_H
 #define INTEGRATION_H
 

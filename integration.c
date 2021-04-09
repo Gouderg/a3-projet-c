@@ -1,5 +1,18 @@
+/* ---------------------------------------------- */
+/* - Auteur: ILLIEN Victor                      - */
+/* - Fichier: integration.c                     - */
+/* - Utilisation: fonctions liées à intégration - */
+/* - Version: 1.0                               - */
+/* ---------------------------------------------- */
 #include "integration.h"
 
+/* ------------------------------------------------- */
+/* - Nom: integrationTest                          - */
+/* - Description: Appel successivement chaque      - */
+/* -              fonction après ouvert un fichier - */
+/* - Paramètre: char*                              - */
+/* - Return: void                                  - */
+/* ------------------------------------------------- */
 void integrationTest(char* filename) {
     absorp data = initAbsorp();
     absorp y = initAbsorp();
