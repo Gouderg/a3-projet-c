@@ -1,14 +1,12 @@
 CC = gcc
-#CC = x86_64-w64-mingw32-gcc
 CFLAGS = -W -Wall -g
 LDFLAGS = -L./ -lftd2xx
-#LDFLAGS = 
 
 SRC = $(wildcard *.c)
 OBJS = $(SRC:.c=.o)
 HEADER = $(SRC:.c=.h)
  
-all : projet clean tozip
+all : projet clean
 
 projet : $(OBJS)
 	$(CC) -o $@ $^ $(LDFLAGS)

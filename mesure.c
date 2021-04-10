@@ -62,7 +62,7 @@ oxy mesure(absorp data, periode* perio) {
             perio->lastoxy.spo2 = -25 * ratio + 110;
         }
         
-        //printf("periode: %d => spo2: %d \n",perio->lastoxy.pouls, perio->lastoxy.spo2);
+        printf("periode: %d => spo2: %d \n",perio->lastoxy.pouls, perio->lastoxy.spo2);
         perio->acir_max = 0;
         perio->acir_min = 0;
         perio->acr_max = 0;

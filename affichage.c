@@ -15,9 +15,7 @@
 /* - Return: void                                - */
 /* ----------------------------------------------- */
 void affichage(oxy myOxy) {
-    if (access(".verrouData", F_OK) != -1) {
-        // no thing to do
-    } else {
+    if (access(".verrouData", F_OK) == -1) {
         // On crée le fichier verrouData
         fopen(".verrouData", "r");
 
