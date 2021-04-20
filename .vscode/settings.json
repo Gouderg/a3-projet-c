@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.rmd": "markdown",
+        "affichage.h": "c",
+        "fichiers.h": "c",
+        "fir.h": "c",
+        "iir.h": "c",
+        "integration.h": "c",
+        "lecture.h": "c",
+        "mesure.h": "c"
+    }
+}

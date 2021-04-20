@@ -6,9 +6,9 @@
 /* ---------------------------------------------- */
 #ifndef LECTURE_H
 #define LECTURE_H
-#include "define.h"
-#include "fir.h"
-#include "ftd2xx.h"
+#include "../header/define.h"
+#include "../header/fir.h"
+#include "../lib/ftd2xx.h"
 
 absorp lecture(FILE* pf, int* etat);
 FT_HANDLE openUSB(FT_HANDLE ftHandle, FT_STATUS* ftStatus);

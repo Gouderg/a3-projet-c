@@ -6,7 +6,7 @@
 /* ---------------------------------------------- */
 #ifndef AFFICHAGE_H
 #define AFFICHAGE_H
-#include "define.h"
+#include "../header/define.h"
 #include "unistd.h"
 
 

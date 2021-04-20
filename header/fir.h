@@ -9,8 +9,8 @@
 
 #include "stdio.h"
 #include "stdlib.h"
-#include "define.h"
-#include "fichiers.h"
+#include "../header/define.h"
+#include "../header/fichiers.h"
 #include "string.h"
 
 absorp firTest(char* filename);

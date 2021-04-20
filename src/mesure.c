@@ -4,7 +4,7 @@
 /* - Utilisation: fonctions liées à mesure      - */
 /* - Version: 1.0                               - */
 /* ---------------------------------------------- */
-#include "mesure.h"
+#include "../header/mesure.h"
 
 /* ----------------------------------------------- */
 /* - Nom: mesureTest                             - */

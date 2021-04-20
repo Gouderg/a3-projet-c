@@ -4,7 +4,7 @@
 /* - Utilisation: fonctions liées au filtre fir - */
 /* - Version: 1.0                               - */
 /* ---------------------------------------------- */
-#include "fir.h"
+#include "../header/fir.h"
 
 /* ------------------------------------------------- */
 /* - Nom: firTest                                  - */

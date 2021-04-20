@@ -7,12 +7,12 @@
 #ifndef INTEGRATION_H
 #define INTEGRATION_H
 
-#include "define.h"
-#include "mesure.h"
-#include "iir.h"
-#include "fir.h"
-#include "fichiers.h"
-#include "affichage.h"
+#include "../header/define.h"
+#include "../header/mesure.h"
+#include "../header/iir.h"
+#include "../header/fir.h"
+#include "../header/fichiers.h"
+#include "../header/affichage.h"
 
 
 

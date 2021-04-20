@@ -4,7 +4,7 @@
 /* - Utilisation: fonctions liées à lecture     - */
 /* - Version: 1.0                               - */
 /* ---------------------------------------------- */
-#include "lecture.h"
+#include "../header/lecture.h"
 
 /* ------------------------------------------------- */
 /* - Nom: lecture                                  - */

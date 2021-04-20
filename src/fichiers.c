@@ -1,4 +1,4 @@
-#include "fichiers.h"
+#include "../header/fichiers.h"
 
 FILE* initFichier(char* nomFichier ){
 	

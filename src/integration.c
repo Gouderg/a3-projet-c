@@ -4,7 +4,7 @@
 /* - Utilisation: fonctions liées à intégration - */
 /* - Version: 1.0                               - */
 /* ---------------------------------------------- */
-#include "integration.h"
+#include "../header/integration.h"
 
 /* ------------------------------------------------- */
 /* - Nom: integrationTest                          - */

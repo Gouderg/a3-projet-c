@@ -1,8 +1,8 @@
 CC = gcc
 CFLAGS = -W -Wall -g
-LDFLAGS = -L./ -lftd2xx
+LDFLAGS = -L./lib -lftd2xx
 
-SRC = $(wildcard *.c)
+SRC = $(wildcard src/*.c)
 OBJS = $(SRC:.c=.o)
 HEADER = $(SRC:.c=.h)
  
@@ -15,7 +15,7 @@ projet : $(OBJS)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
-	rm *.o
+	rm src/*.o
 
 tozip:
 	zip -r auto_save2.zip $(SRC) $(HEADER) define.h -x main.c

@@ -2,7 +2,7 @@
 #define FICHIERS_H
 #include <stdio.h>
 #include <stdlib.h>
-#include "define.h"
+#include "../header/define.h"
 
 
 FILE* initFichier(char* nomFichier );

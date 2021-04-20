@@ -4,7 +4,7 @@
 /* - Utilisation: fonctions liées au filtre iir - */
 /* - Version: 1.0                               - */
 /* ---------------------------------------------- */
-#include "iir.h"
+#include "../header/iir.h"
 
 /* ------------------------------------------------- */
 /* - Nom: iirTest                                  - */

@@ -6,8 +6,8 @@
 /* ---------------------------------------------- */
 #ifndef IIR_H
 #define IIR_H
-#include "define.h"
-#include "fir.h"
+#include "../header/define.h"
+#include "../header/fir.h"
 
 #define ALPHA 0.992
 

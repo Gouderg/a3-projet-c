@@ -1,12 +1,14 @@
 // Inclusion des différentes fonctions
-#include "define.h"
-#include "iir.h"
-#include "fir.h"
-#include "mesure.h"
-#include "integration.h"
-#include "lecture.h"
-#include "affichage.h"
-#include "ftd2xx.h"
+#include "../header/define.h"
+#include "../header/iir.h"
+#include "../header/fir.h"
+#include "../header/mesure.h"
+#include "../header/integration.h"
+#include "../header/lecture.h"
+#include "../header/affichage.h"
+#include "../lib/ftd2xx.h"
+
+#define LECTURE
 
 
 int main() {  
@@ -15,6 +17,7 @@ int main() {
         remove(".verrouData");
     }
 
+    #ifndef LECTURE
     /* Main qui devrait marché avec la carte*/
     //Initialisation des variables
     absorp data = initAbsorp();
@@ -45,31 +48,34 @@ int main() {
     }
     closeUSB(&ftHandle);
 
+    #else
 
     /* Main qui marche avec lecture normale */
-    // // Initialisation des variables
-    // absorp data = initAbsorp();
-    // absorp y = initAbsorp();
-    // absorp x_1 = initAbsorp();
-    // oxy oxy = initOxy();
-    // periode myPeriode = initPeriode();
-    // ac_struct buffer[51] = {0};
-    // FILE* fichier = initFichier("record1_bin.dat");
-    // int etat = 0;
+    // Initialisation des variables
+    absorp data = initAbsorp();
+    absorp y = initAbsorp();
+    absorp x_1 = initAbsorp();
+    oxy oxy = initOxy();
+    periode myPeriode = initPeriode();
+    ac_struct buffer[51] = {0};
+    FILE* fichier = initFichier("record1_bin.dat");
+    int etat = 0;
 
-    // if (fichier != NULL) {
-    //     do {
-    //         data = lecture(fichier, &etat); // lecture de la ligne
-    //         //printf("%f %f %f %f \n", data.acr, data.dcr, data.acir, data.dcir);
-    //         if (etat != EOF) {
-    //             data = FIR(data, buffer); // Application du filtre FIR
-    //             y = IIR(data, &x_1, y);    // Application du filtre IIR
-    //             oxy = mesure(y, &myPeriode);    // On effectue la mesure
-    //             affichage(oxy);
-    //         }
+    if (fichier != NULL) {
+        do {
+            data = lecture(fichier, &etat); // lecture de la ligne
+            //printf("%f %f %f %f \n", data.acr, data.dcr, data.acir, data.dcir);
+            if (etat != EOF) {
+                data = FIR(data, buffer); // Application du filtre FIR
+                y = IIR(data, &x_1, y);    // Application du filtre IIR
+                oxy = mesure(y, &myPeriode);    // On effectue la mesure
+                affichage(oxy);
+            }
             
-    //     } while (etat != EOF);
-    // }
-    // finFichier(fichier);
+        } while (etat != EOF);
+    }
+    finFichier(fichier);
+
+    #endif
     return EXIT_SUCCESS;
 }
