@@ -6,4 +6,5 @@ test_auto.zip
 interfaceOxymetre.jar
 projet.exe
 *.zip
+.vscode/*
 
